@@ -1,0 +1,200 @@
+<html lang="en">
+<head>
+
+    <div id="dropdown">
+        <nav>
+    
+             
+                <button class="drop" onmouseover="showDropdown('ecDropdown')" 
+                onmouseout="hideDropdown('ecDropdown')">Menu </button>
+                <div class="dropdown-content" id="ecDropdown" 
+                onmouseover="showDropdown('ecDropdown')" 
+                onmouseout="hideDropdown('ecDropdown')">
+                <div><a href="index.html">Home </a></div>
+                <div><a href="image.html">Traveling Images </a></div>
+                <div><a href="links.html">Quick Links</a></div>
+                <div><a href="form.html">Form</a></div>
+                </div>
+             
+    
+            </div>
+            </nav>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <form action="results.html" method="GET">
+        <div>
+            <label for="First Name">First Name</label>
+            <input type="First Name" id="First Name">
+        </div>
+        <div>
+            <label for="Last Name">Last Name</label>
+            <input type="Last Name" id="Last Name">
+        </div>
+        <div>
+            <label for="Email">Email</label>
+            <input type="Email" id="Email">
+        </div>
+        <div>
+            <label for="Password">Password</label>
+            <input type="Password" id="Password">
+        </div>
+        <div>
+            <label for="age">Age</label>
+            <input type="number" name="Age" id="Age" min="1" max="150">
+        </div>
+        <div>
+            <label for="Phone#">What is your Phone Number</label>
+            <input type="tel" id="Phone#" name="Phone#">
+            
+        
+        </div>
+        <p>Which part of this page would you prefer to be improved</p>
+        <div>
+            <label for="CSS">CSS</label>
+            <input type="radio" id="CSS" name="CSS">
+        </div>
+        <div>
+            <label for="HTML">HTML</label>
+            <input type="radio" id="HTML" name="HTML">
+        </div>
+        <div>
+            <label for="JavaScript">JavaScript</label>
+            <input type="radio" id="JavaScript" name="JavaScript">
+
+
+        <p>What is your preffered form of multimedia</p>
+        <div>
+        <label for="Texts">Text</label>
+        <input type="checkbox" id="Texts" name="texts">
+        <label for="Video">Video</label>
+        <input type="checkbox" id="Video" name="Video">
+        <label for="Photos">Photos</label>
+        <input type="checkbox" id="Photos" name="Photos">
+        <label for="Other">Other</label>
+        <input type="Other" id="Other" name="Other">
+        </div>
+        <div>
+            <label for="colors">What is your favourite color on a website</label>
+            <input type="color" id="colors" name="colors">
+        </div>
+        <div>
+            <label for="Date">What is the date of submission</label>
+            <input type="date" id="Date" name="Date">
+        </div>
+        <div>
+            <label for="File">Drop a file to show your favourite web element</label>
+            <input type="file" id="File" name="File">
+        </div>
+        <div>
+            <label for="URL">Drop a link to your favourite website</label>
+            <input type="url" id="URL" name="URL">
+        </div>
+        </div>
+            <button type="Submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    
+    </form>
+
+        <script>
+        document.getElementById("myBtn").onclick = function() {
+            var name = prompt("Please enter your name:", "");
+            if (name != null && name != "") {
+                document.getElementById("Heads").innerHTML = "Hello, " + name;
+            }
+        };
+        
+        
+        document.getElementById("myDP").onclick = function() {
+            var img = this.getElementsByTagName('img')[0];
+            img.classList.toggle("Zoomed");
+        }
+        
+        function highlight() {
+            this.getElementsById(Navbar);
+            Navbar.classList.toggle("Naviin");
+        }
+        
+        function unhighlight() {
+            this.getElementsById(Navbar);
+            Navbar.classList.toggle("nav");
+        }
+        
+        
+        document.getElementById("myBtn").onclick = function() {
+            var name = prompt("Please enter your name:", "");
+            if (name != null && name != "") {
+                document.getElementById("Heads").innerHTML = "Hello, " + name;
+            }
+        };
+        
+        document.getElementById("myDP").onclick = function() {
+            var img = this.getElementsByTagName('img')[0];
+            img.classList.toggle("Zoomed");
+        }
+        
+        function showDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = 'block';
+        }
+        
+        function showDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = 'block';
+        }
+        
+        // hide dropdown
+        function hideDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = 'none';
+        }
+        
+        function showDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = 'block';
+        }
+        
+        // hide dropdown
+        function hideDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = 'none';
+        }
+
+        window.addEventListener('load', function() {
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission
+            
+            // Collect form data
+            var formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                age: document.getElementById('age').value,
+                phone: document.getElementById('phone').value,
+                improvement: document.querySelector('input[name="improvement"]:checked') ? document.querySelector('input[name="improvement"]:checked').value : '',
+                multimedia: Array.from(document.querySelectorAll('input[name="multimedia"]:checked')).map(input => input.value),
+                favoriteColor: document.getElementById('colors').value,
+                submissionDate: document.getElementById('date').value,
+                favoriteWebElementFile: document.getElementById('file').files.length > 0 ? document.getElementById('file').files[0].name : '',
+                favoriteWebsite: document.getElementById('url').value
+            };
+
+            // Store data in local storage
+            localStorage.setItem('formData', JSON.stringify(formData));
+
+            // Optionally, redirect to another page or show a submission success message
+            // window.location.href = 'results.html';
+            alert('Form data saved!');
+        });
+    });
+
+        </script>
+
+</body>
+</html>

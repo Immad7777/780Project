@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <div id="dropdown">
+            <nav>
+        
+                 
+                    <button class="drop" onmouseover="showDropdown('ecDropdown')" 
+                    onmouseout="hideDropdown('ecDropdown')">Menu </button>
+                    <div class="dropdown-content" id="ecDropdown" 
+                    onmouseover="showDropdown('ecDropdown')" 
+                    onmouseout="hideDropdown('ecDropdown')">
+                    <div><a href="index.html">Home </a></div>
+                    <div><a href="links.html">links</a></div>
+                    <div><a href="education.html">education</a></div>
+                    <div><a href="work.html">work</a></div>
+                    <div><a href="form.html">Form</a></div>
+                    </div>
+                 
+        
+                </div>
+                </nav>
+
+    <title>Immad Allawala CV</title>
+
+    <div id="myDP">
+        <img src="personalphoto.jpg" alt="Photo of me">
+        <div id="myName">Immad Allawala</div>
+    </div>
+    
+    
+    
+
+    </head>
+    <div id="Heads">
+        <h1>Immad Allawala CV</h1>
+    </div>
+
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="./main.js"></script>
+
+<body>
+
+<button id="myBtn" type="button" >click here to change Title</button>
+<div id="Edu">
+    <H2>Education</H2>   
+</div>
+<section>
+
+    <b>University:</b> <hr> <i>Toronto Metropolitan University</i> <hr>
+    <b>Program:</b> <hr> <i>Bachelors of Business and technology Management</i> <hr>
+    <b>Enrollment:</b> <hr> <i>September 2021-April 2025 (expected)</i> <hr>
+    <b>Program description</b> <hr>
+    <i> This is a ITM program meaning I am well versed in the information technology sector, in this program I study what the BM students study but my predetermined major is ITM meaning the program specializes in info technology.</i> <hr>
+     <h3><b>Favourite course</b></h3> <hr>
+      <i>I personally love the program and my favourite course in the program is ITM200 a course in which we learned how to code python it was a difficult course but overall it was very hands on and I liked that.</i> <hr>
+
+</section>
+
+     <strong>School:</strong> <i> <hr> Erindale Secondary School </i> <hr>
+     <b>Level Achived:</b> <hr> <i> OSSGD </i> <hr>
+    <b>Enrollment:</b> <hr> <i>September 2017 - April 2021</h2></i> <hr>
+    <h3><b>Program description:</b></h3>
+    <hr>
+    <i>This highschool was located in Mississauga on Dundas and Erin Mills parkway,
+        it offered wide range of programs such as IB and AP but I was enrolled in the Standard stream acedemic program</i> <hr>
+
+<H2>Educational awards</H2>
+<h3>OSSGD with Honors</h3>
+
+<H2>Hobbies</H2>
+<UL> 
+<li>Buidling Lego</li>
+<li>Coding and building Arduino Projects</li> 
+<li>Renovating</li>
+</UL>
+
+<h2>Strongest skills in order</h2>
+<ol type="1">
+    <li>Adaptability</li>
+    <li>team work</li>
+    <li>Detail oriented</li>
+    <li>Punctual</li>
+</ol>
+<div id="links">
+<table>
+
+    <tr>
+        <th>LinkedIN</th>
+        <th>University</th>
+    </tr>
+    <tr>
+        <td>
+            <a href="https://www.linkedin.com/in/immad-allawala-a79969172/">Check my linkedin</a>
+        </td>
+        <td>
+            <a href="https://www.torontomu.ca/programs/undergraduate/business-technology-management/">Check my program</a>
+        </td>
+    </tr>
+</table>
+</div>
+
+<script>
+document.getElementById("myBtn").onclick = function() {
+    var name = prompt("Please enter your name:", "");
+    if (name != null && name != "") {
+        document.getElementById("Heads").innerHTML = "Hello, " + name;
+    }
+};
+
+
+document.getElementById("myDP").onclick = function() {
+    var img = this.getElementsByTagName('img')[0];
+    img.classList.toggle("Zoomed");
+}
+
+function highlight() {
+    this.getElementsById(Navbar);
+    Navbar.classList.toggle("Naviin");
+}
+
+function unhighlight() {
+    this.getElementsById(Navbar);
+    Navbar.classList.toggle("nav");
+}
+
+
+document.getElementById("myBtn").onclick = function() {
+    var name = prompt("Please enter your name:", "");
+    if (name != null && name != "") {
+        document.getElementById("Heads").innerHTML = "Hello, " + name;
+    }
+};
+
+document.getElementById("myDP").onclick = function() {
+    var img = this.getElementsByTagName('img')[0];
+    img.classList.toggle("Zoomed");
+}
+
+function showDropdown(dropdownId) {
+    var dropdown = document.getElementById(dropdownId);
+    dropdown.style.display = 'block';
+}
+
+function showDropdown(dropdownId) {
+    var dropdown = document.getElementById(dropdownId);
+    dropdown.style.display = 'block';
+}
+
+// hide dropdown
+function hideDropdown(dropdownId) {
+    var dropdown = document.getElementById(dropdownId);
+    dropdown.style.display = 'none';
+}
+
+function showDropdown(dropdownId) {
+    var dropdown = document.getElementById(dropdownId);
+    dropdown.style.display = 'block';
+}
+
+// hide dropdown
+function hideDropdown(dropdownId) {
+    var dropdown = document.getElementById(dropdownId);
+    dropdown.style.display = 'none';
+}
+
+</script>
+
+
+</body>
+
+</html>
