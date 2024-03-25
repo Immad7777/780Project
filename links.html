@@ -32,7 +32,6 @@
      
 
     </div>
-    </nav>
     <section>
         <div id="links">
             <table>
@@ -52,4 +51,22 @@
         </div>
     </section>
 </body>
+
+<style>
+   .dropdown-content {
+    display: none;
+    /* Add more styling for positioning, etc. */
+} 
+</style>
+
+<script>
+function showDropdown(id) {
+    document.getElementById(id).style.display = 'block';
+}
+
+function hideDropdown(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
+</script>
 </html>
