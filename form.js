@@ -1,4 +1,4 @@
-// Assuming 'myBtn' is the ID of an element that when clicked should prompt for a name.
+
 document.getElementById("myBtn").onclick = function() {
     var name = prompt("Please enter your name:", "");
     if (name != null && name != "") {
@@ -7,7 +7,7 @@ document.getElementById("myBtn").onclick = function() {
     }
 };
 
-// Assuming 'myDP' is the ID of an element that when clicked should toggle an image zoom.
+
 document.getElementById("myDP").onclick = function() {
     var img = this.getElementsByTagName('img')[0];
     if (img) {
@@ -15,7 +15,7 @@ document.getElementById("myDP").onclick = function() {
     }
 };
 
-// Function to show the dropdown, ensure 'ecDropdown' is the correct ID of your dropdown.
+// Function to show the dropdown
 function showDropdown(dropdownId) {
     var dropdown = document.getElementById(dropdownId);
     if (dropdown) {
@@ -23,7 +23,7 @@ function showDropdown(dropdownId) {
     }
 }
 
-// Function to hide the dropdown, ensure 'ecDropdown' is the correct ID of your dropdown.
+// Function to hide the dropdown
 function hideDropdown(dropdownId) {
     var dropdown = document.getElementById(dropdownId);
     if (dropdown) {
@@ -31,14 +31,14 @@ function hideDropdown(dropdownId) {
     }
 }
 
-// Event listener for form submission, replace 'yourFormId' if your form has an ID.
+// Event listener for form submission
 window.addEventListener('load', function() {
     var form = document.querySelector('form');
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault(); // Prevent the default form submission
             
-            // Collect form data, ensuring IDs match your form input IDs.
+            // Collect form data
             var formData = {
                 firstName: document.getElementById('firstName').value,
                 lastName: document.getElementById('lastName').value,
@@ -57,7 +57,6 @@ window.addEventListener('load', function() {
             // Store data in local storage
             localStorage.setItem('formData', JSON.stringify(formData));
 
-            // Optionally, redirect to another page or show a submission success message
             // window.location.href = 'results.html';
             alert('Form data saved!');
         });
