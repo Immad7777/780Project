@@ -1,37 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
+    <title>Immad Allawala CV</title>
+    <style>
+        /* Existing styles */
+        .magnify {
+            cursor: zoom-in;
+        }
+        .cvd-simulate {
+            filter: grayscale(100%);
+        }
+        body {
+            font-size: 1em;
+        }
+        .text-size-control {
+            position: fixed;
+            top: 5px;
+            right: 5px;
+            background: #eee;
+            padding: 5px;
+            z-index: 1000;
+        }
+        /* Dropdown styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .drop {
+            background: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        nav {
+            overflow: hidden;
+        }
+        /* Other styles from style.css should be included here */
+    </style>
+</head>
+<body>
+    <!-- Accessibility tools for text resizing and color vision deficiency -->
+    <div class="text-size-control">
+        <button onclick="resizeText(1)">A+</button>
+        <button onclick="resizeText(-1)">A-</button>
+        <button onclick="simulateCVD()">Color Vision</button>
+    </div>
+
+    <header>
         <div id="dropdown">
             <nav>
-        
-                 
-                    <button class="drop" onmouseover="showDropdown('ecDropdown')" 
-                    onmouseout="hideDropdown('ecDropdown')">Menu </button>
-                    <div class="dropdown-content" id="ecDropdown" 
+                <button class="drop" onmouseover="showDropdown('ecDropdown')" 
+                    onmouseout="hideDropdown('ecDropdown')">Menu</button>
+                <div class="dropdown-content" id="ecDropdown" 
                     onmouseover="showDropdown('ecDropdown')" 
                     onmouseout="hideDropdown('ecDropdown')">
-                    <div><a href="index.html">Home </a></div>
-                    <div><a href="links.html">links</a></div>
-                    <div><a href="education.html">education</a></div>
-                    <div><a href="work.html">work</a></div>
+                    <div><a href="index.html">Home</a></div>
+                    <div><a href="links.html">Links</a></div>
+                    <div><a href="education.html">Education</a></div>
+                    <div><a href="work.html">Work</a></div>
                     <div><a href="form.html">Form</a></div>
-                    </div>
-                 
-        
                 </div>
-                </nav>
+            </nav>
+        </div>
+        <div id="Heads">
+            <h1>Immad Allawala CV</h1>
+        </div>
+        <div id="myDP" class="magnify">
+            <img src="personalphoto.jpg" alt="Photo of me" onclick="magnifyImg(this)">
+            <div id="myName">Immad Allawala</div>
+        </div>
+    </header>
 
-    <title>Immad Allawala CV</title>
-
-    <div id="myDP">
-        <img src="personalphoto.jpg" alt="Photo of me">
-        <div id="myName">Immad Allawala</div>
-    </div>
-    
-    
-    
-
-    </head>
     <div id="Heads">
         <h1>Immad Allawala CV</h1>
     </div>
@@ -100,73 +154,46 @@
 </table>
 </div>
 
-<script>
-document.getElementById("myBtn").onclick = function() {
-    var name = prompt("Please enter your name:", "");
-    if (name != null && name != "") {
-        document.getElementById("Heads").innerHTML = "Hello, " + name;
-    }
-};
+    <script>
+        /* Existing JavaScript for dropdown */
+        function showDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = 'block';
+        }
+        function hideDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = 'none';
+        }
+        /* Prompt for name change */
+        document.getElementById("myBtn").onclick = function() {
+            var name = prompt("Please enter your name:", "");
+            if (name != null && name != "") {
+                document.getElementById("Heads").innerHTML = "Hello, " + name;
+            }
+        };
 
+        /* Accessibility features JavaScript */
 
-document.getElementById("myDP").onclick = function() {
-    var img = this.getElementsByTagName('img')[0];
-    img.classList.toggle("Zoomed");
-}
+        /* Text resizing */
+        function resizeText(multiplier) {
+            if (document.body.style.fontSize === "") {
+                document.body.style.fontSize = "1.0em";
+            }
+            document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.1) + "em";
+        }
 
-function highlight() {
-    this.getElementsById(Navbar);
-    Navbar.classList.toggle("Naviin");
-}
+        /* Color vision deficiency simulation */
+        function simulateCVD() {
+            document.body.classList.toggle("cvd-simulate");
+        }
+        
+        /* Image magnifying */
+        function magnifyImg(element) {
+            var zoom = element.style.transform === "scale(1.5)" ? "scale(1)" : "scale(1.5)";
+            element.style.transform = zoom;
+        }
 
-function unhighlight() {
-    this.getElementsById(Navbar);
-    Navbar.classList.toggle("nav");
-}
-
-
-document.getElementById("myBtn").onclick = function() {
-    var name = prompt("Please enter your name:", "");
-    if (name != null && name != "") {
-        document.getElementById("Heads").innerHTML = "Hello, " + name;
-    }
-};
-
-document.getElementById("myDP").onclick = function() {
-    var img = this.getElementsByTagName('img')[0];
-    img.classList.toggle("Zoomed");
-}
-
-function showDropdown(dropdownId) {
-    var dropdown = document.getElementById(dropdownId);
-    dropdown.style.display = 'block';
-}
-
-function showDropdown(dropdownId) {
-    var dropdown = document.getElementById(dropdownId);
-    dropdown.style.display = 'block';
-}
-
-// hide dropdown
-function hideDropdown(dropdownId) {
-    var dropdown = document.getElementById(dropdownId);
-    dropdown.style.display = 'none';
-}
-
-function showDropdown(dropdownId) {
-    var dropdown = document.getElementById(dropdownId);
-    dropdown.style.display = 'block';
-}
-
-// hide dropdown
-function hideDropdown(dropdownId) {
-    var dropdown = document.getElementById(dropdownId);
-    dropdown.style.display = 'none';
-}
-
-</script>
-
-
+        /* Other JavaScript from main.js should be included here */
+    </script>
 </body>
-
 </html>

@@ -12,11 +12,25 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Align items on both ends */
+    align-items: center; /* Center items vertically */
+    background-color: #333; /* Background color for the header */
+    color: white; /* Text color for the header */
+    padding: 0.5em; /* Padding around the content */
 }
+
+#dropdown nav {
+    flex-grow: 1; /* Allow the nav to grow as needed */
+}
+
+.drop {
+    /* Other styles... */
+    margin-left: 1em; /* Add some margin to the left of the menu button if needed */
+}
+
+/* Add the rest of your styles... */
+
 
 h1 {
     margin: 0;
@@ -84,7 +98,7 @@ section {
 #myDP img {
     max-width: 150px; /* Set maximum width for the image */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Apply border-radius to create a circular shape */
+    border-radius: 25%; /* Apply border-radius to create a circular shape */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     display: block; /* Ensure the image is displayed as a block element */
     margin: 0 auto 10px; /* Center the image horizontally and add some space below */
