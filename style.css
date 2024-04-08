@@ -30,8 +30,6 @@ header {
 }
 
 
-
-
 h1 {
     margin: 0;
 }
@@ -106,11 +104,52 @@ section {
 
 #myName {
     font-size: 20px; /* Adjust font size as needed */
-    color: #333; /* Set text color */
+    color: #ffffff; /* Set text color */
 }
 
 /* New background styling */
 body {
     background-color: #f7e9e9; /* Light gray background */
-    background-image: linear-gradient(45deg, #cfc2c2, #cfc2c2); /* Gradient background */
+}
+
+/* Apply dark mode to the entire page and all its children */
+.dark-mode, .dark-mode * {
+    background-color: #121212 !important; /* Dark background for all elements */
+    color: #ffffff !important; /* White text for all elements */
+}
+
+/* Specific rules for links and interactive elements to make them stand out */
+.dark-mode a {
+    color: #9e9e9e !important; /* Grey text for links to differentiate from general text */
+}
+
+.dark-mode a:hover {
+    color: #ffffff !important; /* White text on hover for better visibility */
+}
+
+/* Ensure dropdown content and other interactive elements follow the dark mode theme */
+.dark-mode .dropdown-content, .dark-mode .dropdown-content a, .dark-mode .drop, .dark-mode nav, .dark-mode header, .dark-mode section, .dark-mode footer {
+    background-color: #333 !important; /* Dark background for dropdowns and other containers */
+}
+
+.dark-mode .dropdown-content a:hover {
+    background-color: #555 !important; /* Darker background on hover for dropdown links */
+}
+
+/* Overriding styles for <hr> which may not be inheriting background colors */
+.dark-mode hr {
+    border-color: #ffffff !important; /* Makes <hr> lines visible in dark mode */
+}
+
+/* Make sure table borders are visible in dark mode */
+.dark-mode table, .dark-mode th, .dark-mode td {
+    border: 1px solid #ffffff !important;
+}
+
+.dark-mode li, .dark-mode ul, .dark-mode ol {
+    background-color: #555 !important;
+} /* Makes all the lines black and prioritizes this code*/
+
+.dark-mode body {
+    background-image: none !important;
 }

@@ -62,3 +62,23 @@ window.addEventListener('load', function() {
         });
     }
 });
+function resizeText(multiplier) {
+    if (document.body.style.fontSize === "") {
+        document.body.style.fontSize = "1.0em";
+    }
+    document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.1) + "em";
+}
+
+/* Color vision deficiency simulation */
+function simulateCVD() {
+    document.body.classList.toggle("cvd-simulate");
+}
+
+/* Image magnifying */
+function magnifyImg(element) {
+    var zoom = element.style.transform === "scale(1.5)" ? "scale(1)" : "scale(1.5)";
+    element.style.transform = zoom;
+}
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}

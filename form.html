@@ -27,6 +27,13 @@
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
+
+    <div class="text-size-control">
+        <button onclick="resizeText(1)">A+</button>
+        <button onclick="resizeText(-1)">A-</button>
+        <button onclick="simulateCVD()">Color Vision</button>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
     <form action="results.html" method="GET">
         <div>
             <label for="First Name">First Name</label>
@@ -193,7 +200,26 @@
             alert('Form data saved!');
         });
     });
+    function resizeText(multiplier) {
+            if (document.body.style.fontSize === "") {
+                document.body.style.fontSize = "1.0em";
+            }
+            document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.1) + "em";
+        }
 
+        /* Color vision deficiency simulation */
+        function simulateCVD() {
+            document.body.classList.toggle("cvd-simulate");
+        }
+        
+        /* Image magnifying */
+        function magnifyImg(element) {
+            var zoom = element.style.transform === "scale(1.5)" ? "scale(1)" : "scale(1.5)";
+            element.style.transform = zoom;
+        }
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
         </script>
 
 </body>
